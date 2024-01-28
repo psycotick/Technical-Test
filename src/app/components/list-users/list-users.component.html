@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="title">
+        <h4>Listado de usuarios para el control de accesso!</h4>
+        <button type="button" class="btn btn-success" routerLink="/add">Crear un nuevo usuario</button>
+    </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col" style="color: white;">Tipo de Documento</th>
+            <th scope="col" style="color: white;">Documento</th>
+            <th scope="col" style="color: rgb(224, 216, 216);">Primer Nombre</th>
+            <th scope="col" style="color: white;">Primer Apellido</th>
+            <th scope="col" style="color: white;">Telefono</th>
+            <th scope="col" style="color: white;">Email</th>
+            <th scope="col" style="color: white;">Foto</th>
+            <th scope="col" style="color: white;">Sexo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listUsers" class="table-primary">
+            <td>{{ item.idTipoDocumento }}</td>
+            <td>{{ item.document }}</td>
+            <td>{{ item.firstName }}</td>
+            <td>{{ item.lastName }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.foto }}</td>
+            <td>{{ item.idSexo }}</td>
+            <td>
+                <button [routerLink]="['/edit', item.id]" type="button" class="btn btn-warning btn-sm">Editar</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
